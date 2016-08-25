@@ -1,0 +1,3 @@
+rootProject.name = 'guice-test'
+
+include 'hz-serialization'

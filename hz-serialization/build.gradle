@@ -1,0 +1,19 @@
+group 'ua.nikiforov'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+dependencies {
+    compile 'com.google.inject:guice:4.0'
+    compile 'com.hazelcast:hazelcast:3.7-EA'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
