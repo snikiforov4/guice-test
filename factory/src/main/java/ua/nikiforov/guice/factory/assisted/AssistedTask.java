@@ -1,20 +1,22 @@
 package ua.nikiforov.guice.factory.assisted;
 
 import com.google.common.base.MoreObjects;
+import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
-import ua.nikiforov.guice.factory.Config;
+import com.google.inject.assistedinject.AssistedInject;
+import ua.nikiforov.guice.factory.Task;
+import ua.nikiforov.guice.factory.ValueSupplier;
 
-import javax.inject.Inject;
 
-public class AssistedTask {
+public class AssistedTask implements Task {
 
-    private final String taskName;
-    private final String value;
+    private String taskName;
+    private String value;
 
     @Inject
-    public AssistedTask(String taskName, @Assisted Config config) {
+    public AssistedTask(String taskName, @Assisted ValueSupplier valueSupplier) {
         this.taskName = taskName;
-        this.value = config.value();
+        this.value = valueSupplier.value();
     }
 
     @Override

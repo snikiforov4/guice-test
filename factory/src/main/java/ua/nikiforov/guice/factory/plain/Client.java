@@ -6,9 +6,6 @@ import com.google.inject.Injector;
 import ua.nikiforov.guice.factory.TaskExecutor;
 import ua.nikiforov.guice.factory.TaskFactory;
 
-/**
- * @author <a href="mailto:snikiforov@corp.nekki.ru">Sergey Nikiforov</a>
- */
 public class Client {
     public static void main(String[] args) {
         Injector injector = Guice.createInjector(new AbstractModule() {
@@ -16,7 +13,7 @@ public class Client {
                 bind(TaskFactory.class).to(PlainTaskFactory.class);
             }
         });
-        TaskExecutor executor = injector.getInstance(TaskExecutor.class);
-        executor.execute();
+        TaskFactory factory = injector.getInstance(TaskFactory.class);
+        System.out.println(factory.create("magic"));
     }
 }
