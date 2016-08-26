@@ -1,3 +1,4 @@
 rootProject.name = 'guice-test'
 
 include 'hz-serialization'
+include 'factory'
