@@ -3,7 +3,6 @@ package ua.nikiforov.guice.factory.plain;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import ua.nikiforov.guice.factory.TaskExecutor;
 import ua.nikiforov.guice.factory.TaskFactory;
 
 public class Client {

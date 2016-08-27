@@ -3,7 +3,6 @@ package ua.nikiforov.guice.factory.assisted;
 import com.google.common.base.MoreObjects;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
-import com.google.inject.assistedinject.AssistedInject;
 import ua.nikiforov.guice.factory.Task;
 import ua.nikiforov.guice.factory.ValueSupplier;
 
@@ -14,7 +13,7 @@ public class AssistedTask implements Task {
     private String value;
 
     @Inject
-    public AssistedTask(String taskName, @Assisted ValueSupplier valueSupplier) {
+    public AssistedTask(@Assisted String taskName, ValueSupplier valueSupplier) {
         this.taskName = taskName;
         this.value = valueSupplier.value();
     }
