@@ -1,11 +1,11 @@
-package ua.nikiforov.guice.factory.assisted;
+package ua.nikiforov.play.with.guice.factory.assisted;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.assistedinject.FactoryModuleBuilder;
-import ua.nikiforov.guice.factory.Task;
-import ua.nikiforov.guice.factory.TaskFactory;
+import ua.nikiforov.play.with.guice.factory.Task;
+import ua.nikiforov.play.with.guice.factory.TaskFactory;
 
 public class Client {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
-package ua.nikiforov.guice.factory.plain;
+package ua.nikiforov.play.with.guice.factory.plain;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import ua.nikiforov.guice.factory.TaskFactory;
+import ua.nikiforov.play.with.guice.factory.TaskFactory;
 
 public class Client {
     public static void main(String[] args) {

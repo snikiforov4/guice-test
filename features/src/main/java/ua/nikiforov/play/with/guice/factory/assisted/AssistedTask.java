@@ -1,10 +1,10 @@
-package ua.nikiforov.guice.factory.assisted;
+package ua.nikiforov.play.with.guice.factory.assisted;
 
 import com.google.common.base.MoreObjects;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
-import ua.nikiforov.guice.factory.Task;
-import ua.nikiforov.guice.factory.ValueSupplier;
+import ua.nikiforov.play.with.guice.factory.Task;
+import ua.nikiforov.play.with.guice.factory.ValueSupplier;
 
 
 public class AssistedTask implements Task {

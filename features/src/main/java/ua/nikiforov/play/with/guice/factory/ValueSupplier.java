@@ -1,4 +1,4 @@
-package ua.nikiforov.guice.factory;
+package ua.nikiforov.play.with.guice.factory;
 
 import javax.inject.Singleton;
 import java.util.UUID;

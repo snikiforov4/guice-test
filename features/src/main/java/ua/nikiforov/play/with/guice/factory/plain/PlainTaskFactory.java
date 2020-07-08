@@ -1,8 +1,8 @@
-package ua.nikiforov.guice.factory.plain;
+package ua.nikiforov.play.with.guice.factory.plain;
 
-import ua.nikiforov.guice.factory.ValueSupplier;
-import ua.nikiforov.guice.factory.Task;
-import ua.nikiforov.guice.factory.TaskFactory;
+import ua.nikiforov.play.with.guice.factory.ValueSupplier;
+import ua.nikiforov.play.with.guice.factory.Task;
+import ua.nikiforov.play.with.guice.factory.TaskFactory;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

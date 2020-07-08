@@ -1,8 +1,8 @@
-package ua.nikiforov.guice.factory.plain;
+package ua.nikiforov.play.with.guice.factory.plain;
 
 import com.google.common.base.MoreObjects;
-import ua.nikiforov.guice.factory.ValueSupplier;
-import ua.nikiforov.guice.factory.Task;
+import ua.nikiforov.play.with.guice.factory.ValueSupplier;
+import ua.nikiforov.play.with.guice.factory.Task;
 
 public class PlainTask implements Task {
 
