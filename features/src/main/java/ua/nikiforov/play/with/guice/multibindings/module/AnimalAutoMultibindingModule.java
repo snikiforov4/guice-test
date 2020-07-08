@@ -1,25 +1,16 @@
 package ua.nikiforov.play.with.guice.multibindings.module;
 
-import com.google.common.reflect.TypeToken;
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
 import org.reflections.Reflections;
 import org.reflections.util.ConfigurationBuilder;
-import ua.nikiforov.play.with.guice.multibindings.domain.Cat;
-import ua.nikiforov.play.with.guice.multibindings.domain.IAnimal;
-import ua.nikiforov.play.with.guice.multibindings.domain.Zebra;
 
-import java.util.Set;
+public class AnimalAutoMultibindingModule<T> extends AbstractModule {
 
-import static com.google.common.base.Strings.isNullOrEmpty;
-
-public class AnimalAutoMultibindingModule extends AbstractModule {
-
-//    private final TypeToken<T> typeToken = new TypeToken<T>(getClass()) { };
-    private final Class<?> classToScan;
+    private final Class<T> classToScan;
     private final String[] packagesToScan;
 
-    public AnimalAutoMultibindingModule(Class<?> classToScan, String... packagesToScan) {
+    public AnimalAutoMultibindingModule(Class<T> classToScan, String... packagesToScan) {
         this.classToScan = classToScan;
         this.packagesToScan = packagesToScan;
     }
@@ -30,14 +21,13 @@ public class AnimalAutoMultibindingModule extends AbstractModule {
         if (packagesToScan.length == 0) {
             packagesToScan = new String[]{this.classToScan.getPackageName()};
         }
-        Reflections reflections = new Reflections(new ConfigurationBuilder().forPackages(packagesToScan));
-        Multibinder<?> binder = Multibinder.newSetBinder(binder(), classToScan);
-        reflections.getSubTypesOf(this.classToScan).forEach(t -> addBindings(binder, t));
+        var reflections = new Reflections(new ConfigurationBuilder().forPackages(packagesToScan));
+        var binder = Multibinder.newSetBinder(binder(), classToScan);
+        reflections.getSubTypesOf(this.classToScan).forEach(t -> addBinding(binder, t));
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    private void addBindings(Multibinder<?> uriBinder, Class type) {
-        uriBinder.addBinding().to(type);
+    private void addBinding(Multibinder<T> binder, Class<? extends T> type) {
+        binder.addBinding().to(type);
     }
 
 }
