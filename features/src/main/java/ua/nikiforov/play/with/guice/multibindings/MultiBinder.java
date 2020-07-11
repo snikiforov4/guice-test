@@ -4,20 +4,19 @@ import ua.nikiforov.play.with.guice.multibindings.service.IService;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.Map;
+import java.util.Set;
 
 @Singleton
-public class MapBinder {
+public class MultiBinder {
 
-    private final Map<String, IService> services;
+    private final Set<IService> services;
 
     @Inject
-    public MapBinder(Map<String, IService> services) {
+    public MultiBinder(Set<IService> services) {
         this.services = services;
     }
 
-    public Map<String, IService> getServices() {
+    public Set<IService> getServices() {
         return services;
     }
-
 }

@@ -2,24 +2,24 @@ package ua.nikiforov.play.with.guice.multibindings.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.MapBinder;
-import ua.nikiforov.play.with.guice.multibindings.domain.Cat;
-import ua.nikiforov.play.with.guice.multibindings.domain.IAnimal;
-import ua.nikiforov.play.with.guice.multibindings.domain.Zebra;
+import ua.nikiforov.play.with.guice.multibindings.service.ServiceA;
+import ua.nikiforov.play.with.guice.multibindings.service.IService;
+import ua.nikiforov.play.with.guice.multibindings.service.ServiceB;
 
-import static ua.nikiforov.play.with.guice.multibindings.AnimalUtils.getAnimalNameByClass;
+import static ua.nikiforov.play.with.guice.multibindings.ServiceUtils.getServiceNameByClass;
 
 public class AnimalMapBinderModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        MapBinder<String, IAnimal> uriBinder =
-                MapBinder.newMapBinder(binder(), String.class, IAnimal.class);
-        registerBindings(uriBinder, Cat.class);
-        registerBindings(uriBinder, Zebra.class);
+        MapBinder<String, IService> binder =
+                MapBinder.newMapBinder(binder(), String.class, IService.class);
+        registerBindings(binder, ServiceA.class);
+        registerBindings(binder, ServiceB.class);
     }
 
-    private void registerBindings(MapBinder<String, IAnimal> uriBinder, Class<? extends IAnimal> aClass) {
-        uriBinder.addBinding(getAnimalNameByClass(aClass)).to(aClass);
+    private void registerBindings(MapBinder<String, IService> binder, Class<? extends IService> aClass) {
+        binder.addBinding(getServiceNameByClass(aClass)).to(aClass);
     }
 
 }
