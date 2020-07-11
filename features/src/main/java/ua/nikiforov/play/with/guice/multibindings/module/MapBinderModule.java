@@ -8,7 +8,7 @@ import ua.nikiforov.play.with.guice.multibindings.service.ServiceB;
 
 import static ua.nikiforov.play.with.guice.multibindings.ServiceUtils.getServiceNameByClass;
 
-public class AnimalMapBinderModule extends AbstractModule {
+public class MapBinderModule extends AbstractModule {
 
     @Override
     protected void configure() {

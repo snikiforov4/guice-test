@@ -5,9 +5,9 @@ import com.google.inject.Injector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import ua.nikiforov.play.with.guice.multibindings.module.AnimalAutoMultibindingModule;
-import ua.nikiforov.play.with.guice.multibindings.module.AnimalMapBinderModule;
-import ua.nikiforov.play.with.guice.multibindings.module.AnimalMultibindingModule;
+import ua.nikiforov.play.with.guice.multibindings.module.AutoMultibindingModule;
+import ua.nikiforov.play.with.guice.multibindings.module.MapBinderModule;
+import ua.nikiforov.play.with.guice.multibindings.module.MultibindingModule;
 import ua.nikiforov.play.with.guice.multibindings.service.IService;
 import ua.nikiforov.play.with.guice.multibindings.service.ServiceA;
 import ua.nikiforov.play.with.guice.multibindings.service.ServiceB;
@@ -25,7 +25,7 @@ public class BindingsTest {
 
         @Test
         void manual() {
-            Injector injector = Guice.createInjector(new AnimalMultibindingModule());
+            Injector injector = Guice.createInjector(new MultibindingModule());
             MultiBinder sut = injector.getInstance(MultiBinder.class);
             assert sut != null;
             Set<IService> services = sut.getServices();
@@ -39,7 +39,7 @@ public class BindingsTest {
 
         @Test
         void auto() {
-            Injector injector = Guice.createInjector(new AnimalAutoMultibindingModule<>(IService.class));
+            Injector injector = Guice.createInjector(new AutoMultibindingModule<>(IService.class));
             MultiBinder sut = injector.getInstance(MultiBinder.class);
             assert sut != null;
             Set<IService> services = sut.getServices();
@@ -59,7 +59,7 @@ public class BindingsTest {
 
         @Test
         void manual() {
-            Injector injector = Guice.createInjector(new AnimalMapBinderModule());
+            Injector injector = Guice.createInjector(new MapBinderModule());
             MapBinder sut = injector.getInstance(MapBinder.class);
             assert sut != null;
 

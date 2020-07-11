@@ -16,7 +16,9 @@ test {
 dependencies {
     implementation('com.google.inject:guice:4.2.3')
     implementation('com.google.inject.extensions:guice-assistedinject:4.1.0')
-    implementation('org.reflections:reflections:0.9.12')
+    implementation 'io.github.classgraph:classgraph:4.8.87'
+    implementation('org.slf4j:slf4j-api:1.7.30')
+    implementation('org.slf4j:slf4j-simple:1.7.30')
 
     testImplementation("org.junit.platform:junit-platform-launcher:1.6.2")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.6.2")

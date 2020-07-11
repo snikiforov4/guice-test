@@ -6,7 +6,7 @@ import ua.nikiforov.play.with.guice.multibindings.service.ServiceA;
 import ua.nikiforov.play.with.guice.multibindings.service.IService;
 import ua.nikiforov.play.with.guice.multibindings.service.ServiceB;
 
-public class AnimalMultibindingModule extends AbstractModule {
+public class MultibindingModule extends AbstractModule {
 
     @Override
     protected void configure() {
